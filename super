@@ -1,18 +1,16 @@
-class Creature
-  def initialize(name)
-    @name = name
-  end
-  
-  def fight
-    return "Punch to the chops!"
-  end
+class Message
+    @@messages_sent = 0
+    def initialize(from, to)
+        @from = from
+        @to = to
+        @@messages_sent += 1
+    end
 end
 
-# Add your code below!
+my_message = Message.new("Merey", "Saule")
 
-class Dragon < Creature
-  def fight 
-      puts "Instead of breathing fire..."
-      super
-  end
+class Email < Message
+    def initialize(from, to)
+        super
+    end
 end
